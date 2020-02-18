@@ -65,7 +65,7 @@
           animation.play();
         };
 
-        var stopAnimation = function(e) {
+        var mouseLeaveHandler = function(e) {
           switch (data.mouseout) {
             case 'stop':
               animation.stop();
@@ -75,6 +75,7 @@
               break;
             case 'reverse':
               animation.setDirection(data.direction * -1);
+              animation.play();
               break;
             default:
               animation.stop();
@@ -82,12 +83,12 @@
         };
 
         $widget
-          .off('mouseenter', playAnimation)
-          .on('mouseenter', playAnimation);
+          .off('mouseenter', mouseEnterHandler)
+          .on('mouseenter', mouseEnterHandler);
         
         $widget
-          .off('mouseleave', stopAnimation)
-          .on('mouseleave', stopAnimation);
+          .off('mouseleave', mouseLeaveHandler)
+          .on('mouseleave', mouseLeaveHandler);
       }
     }
 
