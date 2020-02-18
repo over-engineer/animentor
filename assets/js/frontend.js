@@ -1,12 +1,12 @@
 (function($, lottie) {
   $(function() {
     /**
-     * Run when a Lottie widget is ready
+     * Run when an Animentor Lottie widget is ready
      *
      * @param {jQuery} $scope
      */
     function lottieReady($scope) {
-      var $widget = $scope.find('.lottie-for-elementor-widget');
+      var $widget = $scope.find('.animentor-lottie-widget');
 
       // Check if widget has been initialized before
       if ($widget.data('initialized')) {
@@ -60,7 +60,7 @@
       }
 
       if (data.mouseover) {
-        var playAnimation = function(e) {
+        var mouseEnterHandler = function(e) {
           animation.setDirection(data.direction);
           animation.play();
         };
@@ -101,7 +101,7 @@
     }
 
     /**
-     * Get all Lottie widgets and initialize them when on Elementor edit mode
+     * Get all Animentor Lottie widgets and initialize them when on Elementor edit mode
      * Required due to widgets in Elementor templates not triggering the `frontend/element_ready` hook
      */
     function initLottieWidgets() {

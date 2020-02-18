@@ -2,9 +2,9 @@
     <img width="128" height="128" src="assets/logo.svg" />
 </p>
 
-# Lottie for Elementor
+# Animentor
 
-🍭 An [Elementor](https://wordpress.org/plugins/elementor/) extension to add a Lottie widget.
+🍭 Lottie & Bodymovin widget for [Elementor](https://wordpress.org/plugins/elementor/).
 
 ## Table of Contents
 
@@ -26,13 +26,13 @@ Automatic installation is the easiest option — WordPress will handle the file 
 
 1. Log in to your WordPress dashboard
 2. Navigate to the “Plugins” menu
-3. Search for “Lottie for Elementor”
+3. Search for “Animentor – Lottie & Bodymovin for Elementor”
 4. Click “Install Now” and WordPress will take it from there
 5. Activate the plugin through the “Plugins” menu in WordPress
 
 ### Manual installation
 
-1. Upload the entire `lottie-for-elementor` folder to the `wp-content/plugins/` directory
+1. Upload the entire `animentor-lottie-bodymovin-elementor` folder to the `wp-content/plugins/` directory
 2. Activate the plugin through the “Plugins” menu in WordPress
 
 ## ⌨️ Usage
@@ -152,7 +152,7 @@ $ brew cask install lottie
 
 ## 🐞 Bugs & Features
 
-If you have spotted any bugs, or would like to request additional features from the plugin, please [file an issue](https://github.com/over-engineer/lottie-for-elementor/issues).
+If you have spotted any bugs, or would like to request additional features from the plugin, please [file an issue](https://github.com/over-engineer/animentor/issues).
 
 ## 📙 Credits
 
@@ -161,15 +161,15 @@ If you have spotted any bugs, or would like to request additional features from 
 
 ## 📖 License
 
-Lottie for Elementor is free software: you can redistribute it and/or modify
+Animentor is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 any later version.
 
-Lottie for Elementor is distributed in the hope that it will be useful,
+Animentor is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Lottie for Elementor. If not, see <http://www.gnu.org/licenses/>.
+along with Animentor. If not, see <http://www.gnu.org/licenses/>.

@@ -5,7 +5,7 @@
  * @copyright 2020 over-engineer
  */
 
-namespace LottieForElementor\Widgets;
+namespace Animentor\Widgets;
 
 // Prevent direct access to files
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -28,17 +28,9 @@ class Lottie extends \Elementor\Widget_Base {
     );
 
     wp_register_script(
-      'lottie-for-elementor-frontend',
-      \LottieForElementor\PLUGIN_URL . 'assets/js/frontend.js',
+      'animentor-frontend',
+      \Animentor\PLUGIN_URL . 'assets/js/frontend.js',
       array( 'jquery', 'lottie' ), // dependencies
-      '1.0.0'
-    );
-
-    // Register styles
-    wp_register_style(
-      'lottie-for-elementor-widget',
-      \LottieForElementor\PLUGIN_URL . 'assets/css/widget.css',
-      array(), //dependencies
       '1.0.0'
     );
   }
@@ -53,7 +45,7 @@ class Lottie extends \Elementor\Widget_Base {
    * @return array An array containing all of the custom scripts
    */
   public function get_script_depends() {
-    return array( 'lottie', 'lottie-for-elementor-frontend' );
+    return array( 'lottie', 'animentor-frontend' );
   }
 
   /**
@@ -66,13 +58,13 @@ class Lottie extends \Elementor\Widget_Base {
    * @return array An array containing all of the custom styles
    */
   public function get_style_depends() {
-    return array( 'lottie-for-elementor-widget' );
+    return array( 'animetor-lottie-widget' );
   }
 
   /**
    * Get widget name
    *
-   * @return string Lottie for Elementor widget name
+   * @return string Animentor Lottie widget name
    */
   public function get_name() {
     return 'lottie';
@@ -81,16 +73,16 @@ class Lottie extends \Elementor\Widget_Base {
   /**
    * Get widget title
    *
-   * @return string Lottie for Elementor widget title
+   * @return string Animentor Lottie widget title
    */
   public function get_title() {
-    return __( 'Lottie', 'lottie-for-elementor' );
+    return __( 'Lottie', 'animentor-lottie-bodymovin-elementor' );
   }
 
   /**
    * Get widget icon
    *
-   * @return string Lottie for Elementor widget icon
+   * @return string Animentor Lottie widget icon
    */
   public function get_icon() {
     return 'fa fa-magic';
@@ -99,7 +91,7 @@ class Lottie extends \Elementor\Widget_Base {
   /**
    * Get widget categories
    *
-   * @return array An array of categories the Lottie for Elementor widget belongs to
+   * @return array An array of categories the Animentor Lottie widget belongs to
    */
   public function get_categories() {
     return array( 'general' );
@@ -109,7 +101,7 @@ class Lottie extends \Elementor\Widget_Base {
     $this->start_controls_section(
       'animation_section',
       array(
-        'label' => __( 'Animation', 'lottie-for-elementor' ),
+        'label' => __( 'Animation', 'animentor-lottie-bodymovin-elementor' ),
         'tab'   => \Elementor\Controls_Manager::TAB_CONTENT
       )
     );
@@ -117,28 +109,28 @@ class Lottie extends \Elementor\Widget_Base {
     $this->add_control(
       'data_file',
       array(
-        'label'       => __( 'Data file', 'lottie-for-elementor' ),
+        'label'       => __( 'Data file', 'animentor-lottie-bodymovin-elementor' ),
         'type'        => \Elementor\Controls_Manager::MEDIA,
-        'media_type'  => \LottieForElementor\Json_Handler::MIME_TYPE
+        'media_type'  => \Animentor\Json_Handler::MIME_TYPE
       )
     );
 
     $this->add_responsive_control(
 			'align',
 			array(
-				'label' => __( 'Alignment', 'lottie-for-elementor' ),
+				'label' => __( 'Alignment', 'animentor-lottie-bodymovin-elementor' ),
 				'type' => \Elementor\Controls_Manager::CHOOSE,
 				'options' => array(
 					'flex-start' => array(
-						'title' => __( 'Left', 'lottie-for-elementor' ),
+						'title' => __( 'Left', 'animentor-lottie-bodymovin-elementor' ),
 						'icon' => 'eicon-text-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'lottie-for-elementor' ),
+						'title' => __( 'Center', 'animentor-lottie-bodymovin-elementor' ),
 						'icon' => 'eicon-text-align-center',
 					),
 					'flex-end' => array(
-						'title' => __( 'Right', 'lottie-for-elementor' ),
+						'title' => __( 'Right', 'animentor-lottie-bodymovin-elementor' ),
 						'icon' => 'eicon-text-align-right',
 					),
 				),
@@ -152,22 +144,22 @@ class Lottie extends \Elementor\Widget_Base {
     $this->add_control(
       'link_enabled',
       array(
-        'label'     => __( 'Link', 'lottie-for-elementor' ),
+        'label'     => __( 'Link', 'animentor-lottie-bodymovin-elementor' ),
         'type'      => \Elementor\Controls_Manager::SWITCHER,
-        'label_on'  => __( 'Yes', 'lottie-for-elementor' ),
-        'label_off' => __( 'No', 'lottie-for-elementor' )
+        'label_on'  => __( 'Yes', 'animentor-lottie-bodymovin-elementor' ),
+        'label_off' => __( 'No', 'animentor-lottie-bodymovin-elementor' )
       )
     );
 
 		$this->add_control(
 			'link',
 			array(
-				'label'       => __( 'Link', 'elementor' ),
+				'label'       => __( 'Link', 'animentor-lottie-bodymovin-elementor' ),
 				'type'        => \Elementor\Controls_Manager::URL,
 				'dynamic'     => array(
 					'active' => true,
 				),
-				'placeholder' => __( 'https://your-link.com', 'lottie-for-elementor' ),
+				'placeholder' => __( 'https://your-link.com', 'animentor-lottie-bodymovin-elementor' ),
 				'condition'   => array(
 					'link_enabled' => 'yes',
 				),
@@ -182,7 +174,7 @@ class Lottie extends \Elementor\Widget_Base {
     $this->start_controls_section(
       'animation_options_section',
       array(
-        'label' => __( 'Animation Options', 'lottie-for-elementor' ),
+        'label' => __( 'Animation Options', 'animentor-lottie-bodymovin-elementor' ),
         'tab'   => \Elementor\Controls_Manager::TAB_CONTENT
       )
     );
@@ -190,8 +182,8 @@ class Lottie extends \Elementor\Widget_Base {
     $this->add_control(
       'speed',
       array(
-        'label'       => __( 'Speed', 'lottie-for-elementor' ),
-        'description' => __( 'Normal speed is 1', 'lottie-for-elementor' ),
+        'label'       => __( 'Speed', 'animentor-lottie-bodymovin-elementor' ),
+        'description' => __( 'Normal speed is 1', 'animentor-lottie-bodymovin-elementor' ),
         'type'        => \Elementor\Controls_Manager::NUMBER,
         'step'        => '0.1',
         'placeholder' => '1',
@@ -202,10 +194,10 @@ class Lottie extends \Elementor\Widget_Base {
     $this->add_control(
       'autoplay',
       array(
-        'label'       => __( 'Autoplay', 'lottie-for-elementor' ),
+        'label'       => __( 'Autoplay', 'animentor-lottie-bodymovin-elementor' ),
         'type'        => \Elementor\Controls_Manager::SWITCHER,
-        'label_on'    => __( 'Yes', 'lottie-for-elementor' ),
-        'label_off'   => __( 'No', 'lottie-for-elementor' ),
+        'label_on'    => __( 'Yes', 'animentor-lottie-bodymovin-elementor' ),
+        'label_off'   => __( 'No', 'animentor-lottie-bodymovin-elementor' ),
         'default'     => 'yes'
       )
     );
@@ -213,20 +205,20 @@ class Lottie extends \Elementor\Widget_Base {
     $this->add_control(
       'loop',
       array(
-        'label'     => __( 'Loop', 'lottie-for-elementor' ),
+        'label'     => __( 'Loop', 'animentor-lottie-bodymovin-elementor' ),
         'type'      => \Elementor\Controls_Manager::SWITCHER,
-        'label_on'  => __( 'Yes', 'lottie-for-elementor' ),
-        'label_off' => __( 'No', 'lottie-for-elementor' )
+        'label_on'  => __( 'Yes', 'animentor-lottie-bodymovin-elementor' ),
+        'label_off' => __( 'No', 'animentor-lottie-bodymovin-elementor' )
       )
     );
 
     $this->add_control(
       'reversed',
       array(
-        'label'     => __( 'Reversed', 'lottie-for-elementor' ),
+        'label'     => __( 'Reversed', 'animentor-lottie-bodymovin-elementor' ),
         'type'      => \Elementor\Controls_Manager::SWITCHER,
-        'label_on'  => __( 'Yes', 'lottie-for-elementor' ),
-        'label_off' => __( 'No', 'lottie-for-elementor' )
+        'label_on'  => __( 'Yes', 'animentor-lottie-bodymovin-elementor' ),
+        'label_off' => __( 'No', 'animentor-lottie-bodymovin-elementor' )
       )
     );
 
@@ -241,22 +233,22 @@ class Lottie extends \Elementor\Widget_Base {
     $this->add_control(
       'onmouseover',
       array(
-        'label'     => __( 'Play on mouse over', 'lottie-for-elementor' ),
+        'label'     => __( 'Play on mouse over', 'animentor-lottie-bodymovin-elementor' ),
         'type'      => \Elementor\Controls_Manager::SWITCHER,
-        'label_on'  => __( 'Yes', 'lottie-for-elementor' ),
-        'label_off' => __( 'No', 'lottie-for-elementor' )
+        'label_on'  => __( 'Yes', 'animentor-lottie-bodymovin-elementor' ),
+        'label_off' => __( 'No', 'animentor-lottie-bodymovin-elementor' )
       )
     );
 
     $this->add_control(
       'onmouseout',
       array(
-        'label'   => __( 'On mouse out', 'lottie-for-elementor' ),
+        'label'   => __( 'On mouse out', 'animentor-lottie-bodymovin-elementor' ),
         'type'    => \Elementor\Controls_Manager::SELECT2,
         'options' => array(
-          'stop'    => __( 'Stop', 'lottie-for-elementor' ),
-          'pause'   => __( 'Pause', 'lottie-for-elementor' ),
-          'reverse' => __( 'Reverse', 'lottie-for-elementor' )
+          'stop'    => __( 'Stop', 'animentor-lottie-bodymovin-elementor' ),
+          'pause'   => __( 'Pause', 'animentor-lottie-bodymovin-elementor' ),
+          'reverse' => __( 'Reverse', 'animentor-lottie-bodymovin-elementor' )
         ),
         'default' => 'stop',
         'condition' => array(
@@ -272,7 +264,7 @@ class Lottie extends \Elementor\Widget_Base {
     $this->start_controls_section(
 			'style_section',
 			array(
-				'label' => __( 'Lottie', 'plugin-name' ),
+				'label' => __( 'Lottie', 'animentor-lottie-bodymovin-elementor' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
       )
     );
@@ -281,7 +273,7 @@ class Lottie extends \Elementor\Widget_Base {
     $this->add_responsive_control(
 			'width',
 			array(
-				'label' => __( 'Width', 'lottie-for-elementor' ),
+				'label' => __( 'Width', 'animentor-lottie-bodymovin-elementor' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'default' => array(
 					'unit' => '%',
@@ -308,7 +300,7 @@ class Lottie extends \Elementor\Widget_Base {
 					),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .lottie-for-elementor-widget' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .animentor-lottie-widget' => 'width: {{SIZE}}{{UNIT}};',
 				),
 			)
     );
@@ -316,7 +308,7 @@ class Lottie extends \Elementor\Widget_Base {
     $this->add_responsive_control(
 			'space',
 			array(
-				'label' => __( 'Max Width', 'lottie-for-elementor' ) . ' (%)',
+				'label' => __( 'Max Width', 'animentor-lottie-bodymovin-elementor' ) . ' (%)',
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'default' => array(
 					'unit' => '%',
@@ -335,7 +327,7 @@ class Lottie extends \Elementor\Widget_Base {
 					),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .lottie-for-elementor-widget' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .animentor-lottie-widget' => 'max-width: {{SIZE}}{{UNIT}};',
 				),
 			)
     );
@@ -353,14 +345,14 @@ class Lottie extends \Elementor\Widget_Base {
 
 		$this->start_controls_tab( 'normal',
 			array(
-				'label' => __( 'Normal', 'elementor' ),
+				'label' => __( 'Normal', 'animentor-lottie-bodymovin-elementor' ),
 			)
 		);
 
 		$this->add_control(
 			'opacity',
 			array(
-				'label' => __( 'Opacity', 'elementor' ),
+				'label' => __( 'Opacity', 'animentor-lottie-bodymovin-elementor' ),
 				'type'  => \Elementor\Controls_Manager::SLIDER,
 				'range' => array(
 					'px'  => array(
@@ -370,7 +362,7 @@ class Lottie extends \Elementor\Widget_Base {
 					),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .lottie-for-elementor-widget' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .animentor-lottie-widget' => 'opacity: {{SIZE}};',
 				),
 			)
 		);
@@ -379,7 +371,7 @@ class Lottie extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Css_Filter::get_type(),
 			array(
 				'name' => 'css_filters',
-				'selector' => '{{WRAPPER}} .lottie-for-elementor-widget',
+				'selector' => '{{WRAPPER}} .animentor-lottie-widget',
 			)
 		);
 
@@ -387,14 +379,14 @@ class Lottie extends \Elementor\Widget_Base {
 
 		$this->start_controls_tab( 'hover',
 			array(
-				'label' => __( 'Hover', 'lottie-for-elementor' ),
+				'label' => __( 'Hover', 'animentor-lottie-bodymovin-elementor' ),
 			)
 		);
 
 		$this->add_control(
 			'opacity_hover',
 			array(
-				'label' => __( 'Opacity', 'lottie-for-elementor' ),
+				'label' => __( 'Opacity', 'animentor-lottie-bodymovin-elementor' ),
 				'type'  => \Elementor\Controls_Manager::SLIDER,
 				'range' => array(
 					'px'  => array(
@@ -404,7 +396,7 @@ class Lottie extends \Elementor\Widget_Base {
 					),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .lottie-for-elementor-widget:hover' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .animentor-lottie-widget:hover' => 'opacity: {{SIZE}};',
 				),
 			)
 		);
@@ -413,14 +405,14 @@ class Lottie extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Css_Filter::get_type(),
 			array(
 				'name' => 'css_filters_hover',
-				'selector' => '{{WRAPPER}} .lottie-for-elementor-widget:hover',
+				'selector' => '{{WRAPPER}} .animentor-lottie-widget:hover',
 			)
 		);
 
 		$this->add_control(
 			'background_hover_transition',
 			array(
-				'label' => __( 'Transition Duration', 'lottie-for-elementor' ),
+				'label' => __( 'Transition Duration', 'animentor-lottie-bodymovin-elementor' ),
 				'type'  => \Elementor\Controls_Manager::SLIDER,
 				'range' => array(
 					'px'  => array(
@@ -429,7 +421,7 @@ class Lottie extends \Elementor\Widget_Base {
 					),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .lottie-for-elementor-widget' => 'transition-duration: {{SIZE}}s',
+					'{{WRAPPER}} .animentor-lottie-widget' => 'transition-duration: {{SIZE}}s',
 				),
 			)
 		);
@@ -443,7 +435,7 @@ class Lottie extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			array(
 				'name'      => 'lottie_border',
-				'selector'  => '{{WRAPPER}} .lottie-for-elementor-widget',
+				'selector'  => '{{WRAPPER}} .animentor-lottie-widget',
 				'separator' => 'before',
 			)
 		);
@@ -451,11 +443,11 @@ class Lottie extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'lottie_border_radius',
 			array(
-				'label'       => __( 'Border Radius', 'lottie-for-elementor' ),
+				'label'       => __( 'Border Radius', 'animentor-lottie-bodymovin-elementor' ),
 				'type'        => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units'  => array( 'px', '%' ),
 				'selectors'   => array(
-					'{{WRAPPER}} .lottie-for-elementor-widget' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .animentor-lottie-widget' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -465,7 +457,7 @@ class Lottie extends \Elementor\Widget_Base {
 			array(
 				'name'      => 'lottie_box_shadow',
 				'exclude'   => array( 'box_shadow_position' ),
-				'selector'  => '{{WRAPPER}} .lottie-for-elementor-widget',
+				'selector'  => '{{WRAPPER}} .animentor-lottie-widget',
 			)
 		);
 
@@ -475,7 +467,7 @@ class Lottie extends \Elementor\Widget_Base {
   }
 
   /**
-   * Register Lottie for Elementor controls
+   * Register Animentor Lottie widget controls
    *
    * Adds different input fields to allow the user
    * to change and customize the widget settings
@@ -513,7 +505,7 @@ class Lottie extends \Elementor\Widget_Base {
   }
 
   /**
-   * Render Lottie for Elementor widget output on the frontend
+   * Render Animentor Lottie widget output on the frontend
    * Generates the final HTML
    */
   protected function render() {
@@ -544,7 +536,7 @@ class Lottie extends \Elementor\Widget_Base {
     $mouseout = $settings['onmouseout'];
 
     // Animation name should include the widget id
-    $animation_name = 'lottie-for-elementor-anim-' . $widget_id;
+    $animation_name = 'animentor-lottie-anim-' . $widget_id;
 
     // Handle link
     if ( $link ) {
@@ -563,7 +555,7 @@ class Lottie extends \Elementor\Widget_Base {
     }
 
     printf(
-      '<div class="lottie-for-elementor-widget" '
+      '<div class="animentor-lottie-widget" '
       . 'data-animation-path="%1$s" data-anim-loop="%2$s" data-speed="%3$s" data-direction="%4$s" data-autoplay="%5$s" '
       . 'data-mouseover="%6$s" data-mouseout="%7$s" data-name="%8$s">'
       . '</div>',

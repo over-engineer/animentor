@@ -1,35 +1,36 @@
 <?php
 /**
- * Plugin Name: Lottie for Elementor
- * Plugin URI: https://over-engineer.com/plugins/lottie-for-elementor
- * Description: An Elementor extension to add a Lottie widget
+ * Plugin Name: Animentor – Lottie & Bodymovin widget for Elementor
+ * Plugin URI: https://over-engineer.com/plugins/animentor
+ * Description: An Elementor extension that adds a widget for Lottie animations.
  * Version: 1.0.0
  * Author: overengineer
  * Author URI: https://over-engineer.com/
- * Text Domain: lottie-for-elementor
+ * Text Domain: animentor-lottie-bodymovin-elementor
  * Domain Path: /languages
  * License: GPLv2
  *
- * Lottie for Elementor – An Elementor extension to add a Lottie widget
+ * Animentor – Lottie & Bodymovin widget for Elementor
+ * An Elementor extension that adds a widget for Lottie animations.
  * Copyright (c) 2020 over-engineer
  *
- * Lottie for Elementor is free software: you can redistribute it and/or modify
+ * Animentor is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * any later version.
  *
- * Lottie for Elementor is distributed in the hope that it will be useful,
+ * Animentor is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Lottie for Elementor. If not, see <http://www.gnu.org/licenses/>.
+ * along with Animentor. If not, see <http://www.gnu.org/licenses/>.
  *
  * @copyright 2020 over-engineer
  */
 
-namespace LottieForElementor;
+namespace Animentor;
 
 // Prevent direct access to files
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -47,19 +48,19 @@ final class Plugin {
    *
    * @var string Minimum Elementor version required to run the plugin
    */
-  const MINIMUM_ELEMENTOR_VERSION = '2.0.0';
+  const MINIMUM_ELEMENTOR_VERSION = '2.9.0';
 
   /**
    * Minimum PHP version
    *
    * @var string Minimum PHP version required to run the plugin
    */
-  const MINIMUM_PHP_VERSION = '7.0';
+  const MINIMUM_PHP_VERSION = '5.6.20';
 
   /**
    * Instance
    *
-   * @var Lottie_Elementor_Extension The single instance of the class
+   * @var Plugin The single instance of the class
    */
   private static $_instance = null;
 
@@ -68,7 +69,7 @@ final class Plugin {
    *
    * Ensures only one instance of the class is loaded or can be loaded
    * 
-   * @return Lottie_Elementor_Extension An instance of the class
+   * @return Plugin An instance of the class
    */
   public static function instance() {
     if ( is_null( self::$_instance ) ) {
@@ -78,7 +79,7 @@ final class Plugin {
   }
 
   /**
-   * Lottie_Elementor_Extension constructor
+   * Plugin constructor
    */
   public function __construct() {
     add_action( 'init', array( $this, 'load_textdomain' ) );
@@ -91,7 +92,7 @@ final class Plugin {
    * Load plugin localization files
    */
   public function load_textdomain() {
-    load_plugin_textdomain( 'lottie-for-elementor',
+    load_plugin_textdomain( 'animentor-lottie-bodymovin-elementor',
       false, // this parameter is deprecated
       dirname( plugin_basename( __FILE__ ) ) . '/languages' );
   }
@@ -106,9 +107,9 @@ final class Plugin {
 
     $message = sprintf(
       /* translators: 1: Plugin name 2: Elementor */
-      esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'lottie-for-elementor' ),
-      '<strong>' . esc_html__( 'Lottie for Elementor', 'lottie-for-elementor' ) . '</strong>',
-      '<strong>' . esc_html__( 'Elementor', 'lottie-for-elementor' ) . '</strong>'
+      esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'animentor-lottie-bodymovin-elementor' ),
+      '<strong>' . esc_html__( 'Animentor', 'animentor-lottie-bodymovin-elementor' ) . '</strong>',
+      '<strong>' . esc_html__( 'Elementor', 'animentor-lottie-bodymovin-elementor' ) . '</strong>'
     );
     
     printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -125,7 +126,7 @@ final class Plugin {
     $message = sprintf(
       /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
       esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-test-extension' ),
-      '<strong>' . esc_html__( 'Lottie for Elementor', 'elementor-test-extension' ) . '</strong>',
+      '<strong>' . esc_html__( 'Animentor', 'elementor-test-extension' ) . '</strong>',
       '<strong>' . esc_html__( 'Elementor', 'elementor-test-extension' ) . '</strong>',
       self::MINIMUM_ELEMENTOR_VERSION
     );
@@ -143,9 +144,9 @@ final class Plugin {
 
     $message = sprintf(
       /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-      esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'lottie-for-elementor' ),
-      '<strong>' . esc_html__( 'Lottie for Elementor', 'lottie-for-elementor' ) . '</strong>',
-      '<strong>' . esc_html__( 'PHP', 'lottie-for-elementor' ) . '</strong>',
+      esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'animentor-lottie-bodymovin-elementor' ),
+      '<strong>' . esc_html__( 'Animentor', 'animentor-lottie-bodymovin-elementor' ) . '</strong>',
+      '<strong>' . esc_html__( 'PHP', 'animentor-lottie-bodymovin-elementor' ) . '</strong>',
       self::MINIMUM_PHP_VERSION
     );
 
@@ -161,7 +162,7 @@ final class Plugin {
     require_once( __DIR__ . '/widgets/lottie-widget.php' );
 
     // Register widget
-    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \LottieForElementor\Widgets\Lottie() );
+    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Animentor\Widgets\Lottie() );
   }
 
   /**
@@ -191,7 +192,7 @@ final class Plugin {
     require_once( __DIR__ . '/json-handler.php' );
 
     // Allow JSON uploads
-    new \LottieForElementor\Json_Handler();
+    new \Animentor\Json_Handler();
 
     // Add plugin actions
     add_action( 'elementor/widgets/widgets_registered', array( $this, 'init_widgets' ) );
@@ -201,20 +202,20 @@ final class Plugin {
    * Setup plugin constants
    */
   private function setup_constants() {
-    if ( ! defined( 'LottieForElementor\VERSION' ) ) {
-      define( 'LottieForElementor\VERSION', self::VERSION );
+    if ( ! defined( 'Animentor\VERSION' ) ) {
+      define( 'Animentor\VERSION', self::VERSION );
     }
 
-    if ( ! defined( 'LottieForElementor\PLUGIN_DIR' ) ) {
-      define( 'LottieForElementor\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+    if ( ! defined( 'Animentor\PLUGIN_DIR' ) ) {
+      define( 'Animentor\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
     }
 
-    if ( ! defined( 'LottieForElementor\PLUGIN_URL' ) ) {
-      define( 'LottieForElementor\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+    if ( ! defined( 'Animentor\PLUGIN_URL' ) ) {
+      define( 'Animentor\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
     }
 
-    if ( ! defined( 'LottieForElementor\PLUGIN_FILE' ) ) {
-      define( 'LottieForElementor\PLUGIN_FILE', __FILE__ );
+    if ( ! defined( 'Animentor\PLUGIN_FILE' ) ) {
+      define( 'Animentor\PLUGIN_FILE', __FILE__ );
     }
   }
 }

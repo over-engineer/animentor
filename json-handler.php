@@ -5,7 +5,7 @@
  * @copyright 2020 over-engineer
  */
 
-namespace LottieForElementor;
+namespace Animentor;
 
 // Prevent direct access to files
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -28,7 +28,7 @@ class Json_Handler {
 
     if ( 'json' !== $ext ) {
       $file['error'] = sprintf(
-        __( 'The uploaded %s file is not supported. Please upload a valid JSON file', 'lottie-for-elementor' )
+        __( 'The uploaded %s file is not supported. Please upload a valid JSON file', 'animentor-lottie-bodymovin-elementor' )
       );
       return $file;
     }

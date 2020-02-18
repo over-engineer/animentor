@@ -1,6 +1,6 @@
-=== Lottie for Elementor ===
+=== Animentor – Lottie & Bodymovin for Elementor ===
 Author URI: https://over-engineer.com/
-Plugin URI: https://over-engineer.com/plugins/lottie-for-elementor
+Plugin URI: https://over-engineer.com/plugins/animentor
 Contributors: overengineer
 Tags: lottie, bodymovin, elementor, widget, animation, animations
 Requires at least: 5.0
@@ -10,7 +10,7 @@ Stable Tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-An Elementor extension to add a Lottie widget.
+An Elementor extension that adds a widget for Lottie animations.
 
 == Description ==
 
@@ -40,13 +40,13 @@ Automatic installation is the easiest option — WordPress will handle the file 
 
 1. Log in to your WordPress dashboard
 2. Navigate to the “Plugins” menu
-3. Search for “Lottie for Elementor”
+3. Search for “Animentor – Lottie & Bodymovin widget for Elementor”
 4. Click “Install Now” and WordPress will take it from there
 5. Activate the plugin through the “Plugins” menu in WordPress
 
 = Manual installation =
 
-1. Upload the entire `lottie-for-elementor` folder to the `wp-content/plugins/` directory
+1. Upload the entire `animentor-lottie-bodymovin-elementor` folder to the `wp-content/plugins/` directory
 2. Activate the plugin through the “Plugins” menu in WordPress
 
 = After activation =
@@ -61,7 +61,7 @@ You will find the “Lottie” widget under the “General” widgets category o
 
 = Where can I report any bugs and/or request additional features? =
 
-If you have spotted any bugs, or would like to request additional features from the plugin, please [file an issue](https://github.com/over-engineer/lottie-for-elementor/issues).
+If you have spotted any bugs, or would like to request additional features from the plugin, please [file an issue](https://github.com/over-engineer/animentor/issues).
 
 == Screenshots ==
 
@@ -71,6 +71,6 @@ If you have spotted any bugs, or would like to request additional features from 
 
 == Changelog ==
 
-= 1.0: February 17, 2020 =
+= 1.0: February 18, 2020 =
 
 * Initial version.
