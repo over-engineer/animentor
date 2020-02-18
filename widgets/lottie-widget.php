@@ -203,6 +203,20 @@ class Lottie extends \Elementor\Widget_Base {
     );
 
     $this->add_control(
+      'delay',
+      array(
+        'label'   => __( 'Delay', 'animentor-lottie-bodymovin-elementor' ),
+        'type'    => \Elementor\Controls_Manager::NUMBER,
+        'step'    => '1',
+        'min'     => '0',
+        'default' => '',
+        'condition' => array(
+          'autoplay' => 'yes',
+        ),
+      )
+    );
+
+    $this->add_control(
       'loop',
       array(
         'label'     => __( 'Loop', 'animentor-lottie-bodymovin-elementor' ),
@@ -532,6 +546,7 @@ class Lottie extends \Elementor\Widget_Base {
     $speed = $settings['speed'];
     $direction = $this->switcher_value( $settings['reversed'], '-1', '1' );
     $autoplay = $this->switcher_value( $settings['autoplay'], 'true', 'false' );
+    $delay = $settings['delay'];
     $mouseover = $this->switcher_value( $settings['onmouseover'], 'true', 'false' );
     $mouseout = $settings['onmouseout'];
 
@@ -556,14 +571,17 @@ class Lottie extends \Elementor\Widget_Base {
 
     printf(
       '<div class="animentor-lottie-widget" '
-      . 'data-animation-path="%1$s" data-anim-loop="%2$s" data-speed="%3$s" data-direction="%4$s" data-autoplay="%5$s" '
-      . 'data-mouseover="%6$s" data-mouseout="%7$s" data-name="%8$s">'
+      . 'data-animation-path="%1$s" data-anim-loop="%2$s" data-speed="%3$s" data-direction="%4$s" '
+      . 'data-autoplay="%5$s" data-delay="%6$s" '
+      . 'data-mouseover="%7$s" data-mouseout="%8$s" '
+      . 'data-name="%9$s">'
       . '</div>',
       $data_file_url,     // path to the animation object
       $loop,              // loop (true, false, or number)
       $speed,             // speed (1 is normal speed)
       $direction,         // direction (1 is normal, -1 is reversed)
       $autoplay,          // start playing the animation on page load
+      $delay,             // delay in ms (only if autoplay is enabled)
       $mouseover,         // start playing the animation on mouse over
       $mouseout,          // on mouse out we should stop, pause, or reverse
       $animation_name     // animation name to refer to a specific animation

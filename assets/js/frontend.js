@@ -22,6 +22,7 @@
         'anim-loop',
         'animation-path',
         'autoplay',
+        'delay',
         'direction',
         'mouseout',
         'mouseover',
@@ -39,11 +40,14 @@
       // Search for elements with the .lottie and/or .bodymovin class
       lottie.searchAnimations();
 
+      // Set a variable to indicate if there is a delay
+      var hasDelay = data.autoplay && parseInt(data.delay, 10) === data.delay && data.delay > 0;
+
       // Load Lottie animation and store it for future reference
       var animation = lottie.loadAnimation({
         container: $widget[0],
         renderer: 'svg',
-        autoplay: data.autoplay,
+        autoplay: data.autoplay && !hasDelay,
         loop: data['anim-loop'],
         path: data['animation-path'],
         name: data.name,
@@ -57,6 +61,15 @@
       // Set animation direction (if applicable)
       if (data.hasOwnProperty('direction')) {
         animation.setDirection(data.direction);
+      }
+
+      // Set a timeout if there is a delay
+      if (hasDelay) {
+        setTimeout(function() {
+          if ($widget.length) {
+            animation.play();
+          }
+        }, data.delay);
       }
 
       if (data.mouseover) {
