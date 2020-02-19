@@ -22,7 +22,7 @@ class Lottie extends \Elementor\Widget_Base {
     // Register scripts
     wp_register_script(
       'lottie',
-      'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.4/lottie.min.js',
+      \Animentor\PLUGIN_URL . 'assets/js/lottie.min.js',
       array(), // dependencies
       '5.6.4'
     );
