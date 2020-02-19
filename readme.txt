@@ -71,6 +71,6 @@ If you have spotted any bugs, or would like to request additional features from 
 
 == Changelog ==
 
-= 1.0: February 18, 2020 =
+= 1.0: February 19, 2020 =
 
 * Initial version.
