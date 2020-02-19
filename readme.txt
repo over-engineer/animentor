@@ -2,7 +2,7 @@
 Author URI: https://over-engineer.com/
 Plugin URI: https://over-engineer.com/plugins/animentor
 Contributors: overengineer
-Tags: lottie, bodymovin, elementor, widget, animation, animations
+Tags: lottie, bodymovin, elementor, animation, animations
 Requires at least: 5.0
 Tested up to: 5.3
 Requires PHP: 5.6.20

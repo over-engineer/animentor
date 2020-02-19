@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="128" height="128" src="assets/logo.svg" />
+    <img width="128" height="128" src="assets/icon.svg" />
 </p>
 
 # Animentor
