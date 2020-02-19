@@ -4,6 +4,9 @@
 
 # Animentor
 
+[![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/animentor-lottie-bodymovin-elementor)](https://wordpress.org/plugins/animentor-lottie-bodymovin-elementor/)
+[![WordPress Plugin: Tested WP Version](https://img.shields.io/wordpress/plugin/tested/animentor-lottie-bodymovin-elementor)](https://wordpress.org/plugins/animentor-lottie-bodymovin-elementor/)
+
 🍭 Lottie & Bodymovin widget for [Elementor](https://wordpress.org/plugins/elementor/).
 
 ## Table of Contents
