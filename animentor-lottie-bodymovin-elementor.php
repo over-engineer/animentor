@@ -3,7 +3,7 @@
  * Plugin Name: Animentor – Lottie & Bodymovin widget for Elementor
  * Plugin URI: https://over-engineer.com/plugins/animentor
  * Description: An Elementor extension that adds a widget for Lottie animations.
- * Version: 1.0.1
+ * Version: 1.1.0
  * Author: overengineer
  * Author URI: https://over-engineer.com/
  * Text Domain: animentor-lottie-bodymovin-elementor
@@ -41,7 +41,7 @@ final class Plugin {
    *
    * @var string The plugin version
    */
-  const VERSION = '1.0.1';
+  const VERSION = '1.1.0';
 
   /**
    * Minimum Elementor version

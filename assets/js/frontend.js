@@ -80,6 +80,8 @@
 
         var mouseLeaveHandler = function(e) {
           switch (data.mouseout) {
+            case 'no_action':
+              break;
             case 'stop':
               animation.stop();
               break;

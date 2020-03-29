@@ -260,9 +260,10 @@ class Lottie extends \Elementor\Widget_Base {
         'label'   => __( 'On mouse out', 'animentor-lottie-bodymovin-elementor' ),
         'type'    => \Elementor\Controls_Manager::SELECT2,
         'options' => array(
-          'stop'    => __( 'Stop', 'animentor-lottie-bodymovin-elementor' ),
-          'pause'   => __( 'Pause', 'animentor-lottie-bodymovin-elementor' ),
-          'reverse' => __( 'Reverse', 'animentor-lottie-bodymovin-elementor' )
+          'no_action' => __( 'No action', 'animentor-lottie-bodymovin-elementor' ),
+          'stop'      => __( 'Stop', 'animentor-lottie-bodymovin-elementor' ),
+          'pause'     => __( 'Pause', 'animentor-lottie-bodymovin-elementor' ),
+          'reverse'   => __( 'Reverse', 'animentor-lottie-bodymovin-elementor' )
         ),
         'default' => 'stop',
         'condition' => array(

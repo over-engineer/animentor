@@ -6,7 +6,7 @@ Tags: lottie, bodymovin, elementor, animation, animations
 Requires at least: 5.0
 Tested up to: 5.3
 Requires PHP: 5.6.20
-Stable Tag: 1.0.1
+Stable Tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,10 @@ If you have spotted any bugs, or would like to request additional features from 
 3. Style tab
 
 == Changelog ==
+
+= 1.1.0: March 30, 2020 =
+
+* Add a “No action” option to the “On mouse out” actions.
 
 = 1.0.1: February 19, 2020 =
 
