@@ -4,7 +4,7 @@ Plugin URI: https://over-engineer.com/plugins/animentor
 Contributors: overengineer
 Tags: lottie, bodymovin, elementor, animation, animations
 Requires at least: 5.0
-Tested up to: 5.3
+Tested up to: 5.4
 Requires PHP: 5.6.20
 Stable Tag: 1.1.0
 License: GPLv2 or later
