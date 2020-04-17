@@ -31,7 +31,7 @@ class Lottie extends \Elementor\Widget_Base {
       'animentor-frontend',
       \Animentor\PLUGIN_URL . 'assets/js/frontend.js',
       array( 'jquery', 'lottie' ), // dependencies
-      '1.0.0'
+      \Animentor\VERSION
     );
   }
 
@@ -206,6 +206,7 @@ class Lottie extends \Elementor\Widget_Base {
       'delay',
       array(
         'label'   => __( 'Delay', 'animentor-lottie-bodymovin-elementor' ),
+        'description' => __( 'Set in milliseconds', 'animentor-lottie-bodymovin-elementor' ),
         'type'    => \Elementor\Controls_Manager::NUMBER,
         'step'    => '1',
         'min'     => '0',

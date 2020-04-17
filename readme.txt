@@ -6,7 +6,7 @@ Tags: lottie, bodymovin, elementor, animation, animations
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 5.6.20
-Stable Tag: 1.1.0
+Stable Tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,10 @@ An unofficial WordPress plugin to add a Lottie widget to the [Elementor Page Bui
 - Includes several styling options, allowing you to customize:
   - The **dimensions (width and max width) with responsive controls**
   - **Opacity, CSS filters, borders, and box shadow!**
+
+= Setup tutorial =
+
+[youtube https://www.youtube.com/watch?v=LYTTMPNQQZQ]
 
 == Installation ==
 
@@ -70,6 +74,12 @@ If you have spotted any bugs, or would like to request additional features from 
 3. Style tab
 
 == Changelog ==
+
+= 1.1.1: April 17, 2020 =
+
+* Minor bug fix.
+* Add a setup tutorial video to `readme.txt`.
+* Add “Delay” control description specifying its units (ms).
 
 = 1.1.0: March 30, 2020 =
 

@@ -141,7 +141,7 @@
       initLottieWidgets();
     }
 
-    if (elementorFrontend.hooks) {
+    if (window.elementorFrontend && elementorFrontend.hooks) {
       // Hooks exist, add action
       addElementorHooks();
     } else {
